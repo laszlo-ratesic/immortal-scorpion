@@ -1,7 +1,7 @@
 {
-  "name": "React PWA",
-  "short_name": "reactpwa",
-  "description": "Starter kit for modern web applications",
+  "name": "Keenan Chiasson's React Portfolio",
+  "short_name": "reactportfolio",
+  "description": "React portfolio for Keenan Chiasson",
   "theme_color": "#ffffff",
   "icons": [
     {
