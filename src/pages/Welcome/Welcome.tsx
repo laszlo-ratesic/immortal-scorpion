@@ -1,11 +1,11 @@
 import Meta from '@/components/Meta';
+import ParticleReactor from '@/components/ParticleReactor';
+import ProjectCard from '@/components/ProjectCard';
 import { FullSizeCenteredFlexBox } from '@/components/styled';
 import useOrientation from '@/hooks/useOrientation';
 
-import ParticleReactor from '../../components/ParticleReactor';
 import muiLogo from './logos/mui.svg';
 import pwaLogo from './logos/pwa.svg';
-import reactLogo from './logos/react_ed.svg';
 import recoilLogo from './logos/recoil.svg';
 import rrLogo from './logos/rr.svg';
 import tsLogo from './logos/ts.svg';
@@ -15,9 +15,6 @@ import { Image } from './styled';
 function Welcome() {
   const isPortrait = useOrientation();
 
-  const width = isPortrait ? '40%' : '30%';
-  const height = isPortrait ? '30%' : '40%';
-
   return (
     <>
       <Meta title="Welcome" />
@@ -26,7 +23,7 @@ function Welcome() {
         <Image alt="vite" src={viteLogo} />
         <Image alt="typescript" src={tsLogo} />
         <ParticleReactor />
-        <Image alt="react" src={reactLogo} sx={{ width, height }} />
+        <ProjectCard />
         <Image alt="mui" src={muiLogo} />
         <Image alt="recoil" src={recoilLogo} />
         <Image alt="pwa" src={pwaLogo} />

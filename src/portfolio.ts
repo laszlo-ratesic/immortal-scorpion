@@ -156,4 +156,16 @@ const skills = {
   ],
 };
 
-export { person, contactInfo, skills };
+const projects = {
+  data: [
+    {
+      title: 'Blockdust',
+      description: '🧊 Tech blogging for crypto enthusiasts',
+      app_url: 'https://blockdust.herokuapp.com/',
+      repo_link: 'https://github.com/laszlo-ratesic/block-dust',
+      img: '/blockdust-icon.png',
+    },
+  ],
+};
+
+export { person, contactInfo, skills, projects };
