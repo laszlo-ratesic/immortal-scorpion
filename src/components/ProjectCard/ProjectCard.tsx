@@ -3,8 +3,6 @@ import { animated, config, useSpring } from 'react-spring';
 
 import styled from 'styled-components';
 
-import { projects } from '@/portfolio';
-
 const Container = styled(animated.div)`
   display: inline-block;
   padding: 3em;
@@ -46,7 +44,8 @@ const calc = (x: number, y: number) => [
 const trans = (x: number, y: number, s: number) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const ProjectCard = () => {
+// eslint-disable-next-line
+const ProjectCard = ({ projects }: any) => {
   const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: config.default }));
 
   const project = projects.data[0];
