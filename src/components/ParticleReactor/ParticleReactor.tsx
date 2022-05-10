@@ -38,7 +38,7 @@ function ParticleReactor() {
           composite: 'destination-out',
           cover: {
             color: {
-              value: theme === 'light' ? '#fff' : '#000',
+              value: theme === 'light' ? '#eeeeff' : '#001',
             },
             opacity: 1,
           },
