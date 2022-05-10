@@ -2,18 +2,18 @@ import isMobile from '@/utils/is-mobile';
 
 import type { Notifications } from './types';
 
-const title = 'React PWA';
+const title = "Keenan's React Portfolio";
 
-const email = 'auther-email@gmail.com';
+const email = 'keenanrc@hotmail.com';
 
-const repository = 'https://github.com/suren-atoyan/react-pwa';
+const repository = 'https://github.com/laszlo-ratesic/immortal-scorpion';
 
 const messages = {
   app: {
     crash: {
       title: 'Oooops... Sorry, I guess, something went wrong. You can:',
       options: {
-        email: `contact with author by this email - ${email}`,
+        email: `contact me by email - ${email}`,
         reset: 'Press here to reset the application',
       },
     },

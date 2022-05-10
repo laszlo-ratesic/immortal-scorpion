@@ -2,6 +2,7 @@ import Meta from '@/components/Meta';
 import { FullSizeCenteredFlexBox } from '@/components/styled';
 import useOrientation from '@/hooks/useOrientation';
 
+import ParticleReactor from '../../components/ParticleReactor';
 import muiLogo from './logos/mui.svg';
 import pwaLogo from './logos/pwa.svg';
 import reactLogo from './logos/react_ed.svg';
@@ -24,6 +25,7 @@ function Welcome() {
         <Image alt="react-router" src={rrLogo} />
         <Image alt="vite" src={viteLogo} />
         <Image alt="typescript" src={tsLogo} />
+        <ParticleReactor />
         <Image alt="react" src={reactLogo} sx={{ width, height }} />
         <Image alt="mui" src={muiLogo} />
         <Image alt="recoil" src={recoilLogo} />
