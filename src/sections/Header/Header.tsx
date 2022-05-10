@@ -1,3 +1,6 @@
+import 'react-awesome-button/dist/themes/theme-c137.css';
+import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
+
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ThemeIcon from '@mui/icons-material/InvertColors';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -26,6 +29,7 @@ function Header() {
   const [, themeActions] = useTheme();
   const [, notificationsActions] = useNotifications();
   const [, hotKeysDialogActions] = useHotKeysDialog();
+  const [theme] = useTheme();
 
   function showNotification() {
     notificationsActions.push({
@@ -69,26 +73,27 @@ function Header() {
           <FlexBox>
             <FlexBox>
               <Tooltip title="Hot keys" arrow>
-                <HotKeysButton
-                  size="small"
-                  variant="outlined"
-                  aria-label="open hotkeys dialog"
-                  onClick={hotKeysDialogActions.open}
-                >
-                  alt + /
+                <HotKeysButton size="small" onClick={hotKeysDialogActions.open}>
+                  <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                    alt + /
+                  </AwesomeButton>
                 </HotKeysButton>
               </Tooltip>
             </FlexBox>
             <Divider orientation="vertical" flexItem />
             <Tooltip title="Fork me on Github" arrow>
               <IconButton color="info" size="large" component="a" href={repository} target="_blank">
-                <GitHubIcon />
+                <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                  <GitHubIcon />
+                </AwesomeButton>
               </IconButton>
             </Tooltip>
             <Divider orientation="vertical" flexItem />
             <Tooltip title="Switch theme" arrow>
               <IconButton color="info" edge="end" size="large" onClick={themeActions.toggle}>
-                <ThemeIcon />
+                <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                  <ThemeIcon />
+                </AwesomeButton>
               </IconButton>
             </Tooltip>
           </FlexBox>
