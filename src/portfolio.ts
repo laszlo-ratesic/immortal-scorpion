@@ -156,16 +156,42 @@ const skills = {
   ],
 };
 
-const projects = {
-  data: [
-    {
-      title: 'Blockdust',
-      description: '🧊 Tech blogging for crypto enthusiasts',
-      app_url: 'https://blockdust.herokuapp.com/',
-      repo_link: 'https://github.com/laszlo-ratesic/block-dust',
-      img: '/blockdust-icon.png',
-    },
-  ],
-};
+const projects = [
+  {
+    title: 'Blockdust',
+    description: '🧊 Tech blogging for crypto enthusiasts',
+    app_url: 'https://blockdust.herokuapp.com/',
+    repo_link: 'https://github.com/laszlo-ratesic/block-dust',
+    img: '/blockdust-icon.png',
+  },
+  {
+    title: 'Reaver CMS',
+    description: '🏴‍☠️ MySQL database management CLI',
+    app_url: 'https://www.youtube.com/watch?v=1OlIXnaXYYc',
+    repo_link: 'https://github.com/laszlo-ratesic/not-yo-mommas-hacker-tracker',
+    img: '/reaver-logo.png',
+  },
+  {
+    title: 'Bloodgate',
+    description: '🗡️ Fantasy Trading Card Game written in vanilla JS',
+    app_url: 'https://laszlo-ratesic.github.io/bloodgate/',
+    repo_link: 'https://github.com/laszlo-ratesic/bloodgate',
+    img: '/bloodgate-logo.png',
+  },
+  {
+    title: 'Backdraft',
+    description: "🔥 A workplace organizer for managing your team's core information",
+    app_url: '',
+    repo_link: 'https://github.com/laszlo-ratesic/backdraft',
+    img: '/backdraft-logo.png',
+  },
+  {
+    title: '47th Street',
+    description: '💎 E-Commerce backend for the Diamond Dealers between 5th and 6th avenue.',
+    app_url: '',
+    repo_link: 'https://github.com/laszlo-ratesic/47th-street',
+    img: '/47th-street-logo.png',
+  },
+];
 
 export { person, contactInfo, skills, projects };

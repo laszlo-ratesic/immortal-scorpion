@@ -1,6 +1,5 @@
 import Meta from '@/components/Meta';
 import ParticleReactor from '@/components/ParticleReactor';
-import ProjectCard from '@/components/ProjectCard';
 import { FullSizeCenteredFlexBox } from '@/components/styled';
 import useOrientation from '@/hooks/useOrientation';
 
@@ -23,7 +22,6 @@ function Welcome() {
         <Image alt="vite" src={viteLogo} />
         <Image alt="typescript" src={tsLogo} />
         <ParticleReactor />
-        <ProjectCard />
         <Image alt="mui" src={muiLogo} />
         <Image alt="recoil" src={recoilLogo} />
         <Image alt="pwa" src={pwaLogo} />
