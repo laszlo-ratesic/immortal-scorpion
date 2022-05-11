@@ -11,12 +11,12 @@ import tsLogo from './logos/ts.svg';
 import viteLogo from './logos/vite.svg';
 import { Image } from './styled';
 
-function Welcome() {
+function AboutMe() {
   const isPortrait = useOrientation();
 
   return (
     <>
-      <Meta title="Welcome" />
+      <Meta title="About Me" />
       <FullSizeCenteredFlexBox flexDirection={isPortrait ? 'column' : 'row'}>
         <Image alt="react-router" src={rrLogo} />
         <Image alt="vite" src={viteLogo} />
@@ -30,4 +30,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default AboutMe;

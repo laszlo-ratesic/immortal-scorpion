@@ -9,22 +9,22 @@ import asyncComponentLoader from '@/utils/loader';
 import { Pages, Routes } from './types';
 
 const routes: Routes = {
-  [Pages.Welcome]: {
-    component: asyncComponentLoader(() => import('@/pages/Welcome')),
+  [Pages.AboutMe]: {
+    component: asyncComponentLoader(() => import('@/pages/AboutMe')),
     path: '/',
-    title: 'Welcome',
+    title: 'About Me',
     icon: HomeIcon,
   },
-  [Pages.Projects]: {
-    component: asyncComponentLoader(() => import('@/pages/Projects')),
-    path: '/projects',
-    title: 'Projects',
+  [Pages.Portfolio]: {
+    component: asyncComponentLoader(() => import('@/pages/Portfolio')),
+    path: '/portfolio',
+    title: 'Portfolio',
     icon: GitHubIcon,
   },
-  [Pages.Page2]: {
-    component: asyncComponentLoader(() => import('@/pages/Page2')),
-    path: '/page-2',
-    title: 'Page 2',
+  [Pages.Resume]: {
+    component: asyncComponentLoader(() => import('@/pages/Resume')),
+    path: '/resume',
+    title: 'Resume',
     icon: AddTaskIcon,
   },
   [Pages.Page3]: {
@@ -33,10 +33,10 @@ const routes: Routes = {
     title: 'Page 3',
     icon: TerrainIcon,
   },
-  [Pages.Page4]: {
-    component: asyncComponentLoader(() => import('@/pages/Page4')),
-    path: '/page-4',
-    title: 'Page 4',
+  [Pages.Contact]: {
+    component: asyncComponentLoader(() => import('@/pages/Contact')),
+    path: '/contact',
+    title: 'Contact',
     icon: BugReportIcon,
   },
   [Pages.NotFound]: {
