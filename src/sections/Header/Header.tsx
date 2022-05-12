@@ -43,7 +43,7 @@ function Header() {
         // to show fully customized notification
         content: (
           <Alert severity="info">
-            <AlertTitle>Notification demo (random IT jokes :))</AlertTitle>
+            <AlertTitle>Dad jokes for software nerds</AlertTitle>
             {getRandomJoke()}
           </Alert>
         ),

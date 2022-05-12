@@ -24,7 +24,7 @@ const Container = styled(animated.div)`
 const StyledImg = styled.img`
   width: 90px;
   height: auto;
-  border: 2px solid #000;
+  /* border: 2px solid #000; */
   border-radius: 50%;
   margin-bottom: 1rem;
 `;

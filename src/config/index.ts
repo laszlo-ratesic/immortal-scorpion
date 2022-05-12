@@ -2,7 +2,7 @@ import isMobile from '@/utils/is-mobile';
 
 import type { Notifications } from './types';
 
-const title = "Keenan's React Portfolio";
+const title = 'Keenan Chiasson | Full-Stack Developer | Dad';
 
 const email = 'keenanrc@hotmail.com';
 
