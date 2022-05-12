@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography';
 
 import Meta from '@/components/Meta';
+import PortfolioParticles from '@/components/PortfolioParticles';
 import ProjectCard from '@/components/ProjectCard';
 import { ColumnFlexBox, FullSizeCenteredFlexBox } from '@/components/styled';
 import { projects } from '@/portfolio';
@@ -30,6 +31,7 @@ function Portfolio() {
         </FullSizeCenteredFlexBox>
         <Footer />
       </ColumnFlexBox>
+      <PortfolioParticles />
     </>
   );
 }

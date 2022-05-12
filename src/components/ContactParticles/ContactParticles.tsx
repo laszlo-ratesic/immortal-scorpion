@@ -4,7 +4,7 @@ import { loadFull } from 'tsparticles';
 
 import useTheme from '@/store/theme';
 
-function ParticleReactor() {
+function ContactParticles() {
   const [theme] = useTheme();
 
   const particlesInit = async (main) => {
@@ -24,11 +24,10 @@ function ParticleReactor() {
         autoPlay: true,
         background: {
           color: {
-            value: '#000',
+            value: theme === 'light' ? '#eeeeff' : '#001',
           },
-          image:
-            "url('https://images.unsplash.com/photo-1633430688358-8e27e527e527?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1722&q=80')",
-          position: '50% 35%',
+          image: '',
+          position: '50% 50%',
           repeat: 'no-repeat',
           size: 'cover',
           opacity: 1,
@@ -37,11 +36,11 @@ function ParticleReactor() {
           composite: 'destination-out',
           cover: {
             color: {
-              value: theme === 'light' ? '#eeeeff' : '#001',
+              value: '#fff',
             },
             opacity: 1,
           },
-          enable: true,
+          enable: false,
         },
         fullScreen: {
           enable: true,
@@ -65,9 +64,9 @@ function ParticleReactor() {
             },
             onHover: {
               enable: true,
-              mode: 'bubble',
+              mode: 'grab',
               parallax: {
-                enable: false,
+                enable: true,
                 force: 60,
                 smooth: 10,
               },
@@ -90,8 +89,8 @@ function ParticleReactor() {
               distance: 400,
               duration: 2,
               mix: false,
-              opacity: 1,
-              size: 100,
+              opacity: 0.8,
+              size: 40,
               divs: {
                 distance: 200,
                 duration: 0.4,
@@ -219,7 +218,7 @@ function ParticleReactor() {
             },
           },
           color: {
-            value: '#ffffff',
+            value: theme === 'light' ? '#001' : '#eeeeff',
             animation: {
               h: {
                 count: 0,
@@ -292,13 +291,13 @@ function ParticleReactor() {
           links: {
             blink: false,
             color: {
-              value: '#ffffff',
+              value: theme === 'light' ? '#001' : '#eeeeff',
             },
             consent: false,
             distance: 150,
             enable: true,
             frequency: 1,
-            opacity: 1,
+            opacity: 0.4,
             shadow: {
               blur: 5,
               color: {
@@ -386,18 +385,21 @@ function ParticleReactor() {
               factor: 1000,
             },
             limit: 0,
-            value: 80,
+            value: 100,
           },
           opacity: {
             random: {
-              enable: false,
+              enable: true,
               minimumValue: 0.1,
             },
-            value: 1,
+            value: {
+              min: 0.1,
+              max: 0.5,
+            },
             animation: {
               count: 0,
-              enable: false,
-              speed: 1,
+              enable: true,
+              speed: 3,
               sync: false,
               destroy: 'none',
               startValue: 'random',
@@ -483,13 +485,13 @@ function ParticleReactor() {
               minimumValue: 1,
             },
             value: {
-              min: 1,
-              max: 30,
+              min: 0.1,
+              max: 10,
             },
             animation: {
               count: 0,
-              enable: false,
-              speed: 40,
+              enable: true,
+              speed: 20,
               sync: false,
               destroy: 'none',
               startValue: 'random',
@@ -552,4 +554,4 @@ function ParticleReactor() {
   );
 }
 
-export default ParticleReactor;
+export default ContactParticles;

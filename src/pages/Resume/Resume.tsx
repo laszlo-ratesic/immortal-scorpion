@@ -1,6 +1,7 @@
 import Typography from '@mui/material/Typography';
 
 import Meta from '@/components/Meta';
+import ResumeParticles from '@/components/ResumeParticles';
 import { FullSizeCenteredFlexBox } from '@/components/styled';
 
 function Resume() {
@@ -10,6 +11,7 @@ function Resume() {
       <FullSizeCenteredFlexBox>
         <Typography variant="h3">Resume</Typography>
       </FullSizeCenteredFlexBox>
+      <ResumeParticles />
     </>
   );
 }

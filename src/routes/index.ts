@@ -1,8 +1,7 @@
 import AddTaskIcon from '@mui/icons-material/AddTask';
-import BugReportIcon from '@mui/icons-material/BugReport';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeIcon from '@mui/icons-material/Home';
-import TerrainIcon from '@mui/icons-material/Terrain';
 
 import asyncComponentLoader from '@/utils/loader';
 
@@ -27,17 +26,11 @@ const routes: Routes = {
     title: 'Resume',
     icon: AddTaskIcon,
   },
-  [Pages.Page3]: {
-    component: asyncComponentLoader(() => import('@/pages/Page3')),
-    path: '/page-3',
-    title: 'Page 3',
-    icon: TerrainIcon,
-  },
   [Pages.Contact]: {
     component: asyncComponentLoader(() => import('@/pages/Contact')),
     path: '/contact',
     title: 'Contact',
-    icon: BugReportIcon,
+    icon: ConnectWithoutContactIcon,
   },
   [Pages.NotFound]: {
     component: asyncComponentLoader(() => import('@/pages/NotFound')),

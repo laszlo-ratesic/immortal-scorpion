@@ -4,7 +4,7 @@ import { loadFull } from 'tsparticles';
 
 import useTheme from '@/store/theme';
 
-function ParticleReactor() {
+function PortfolioParticles() {
   const [theme] = useTheme();
 
   const particlesInit = async (main) => {
@@ -24,24 +24,17 @@ function ParticleReactor() {
         autoPlay: true,
         background: {
           color: {
-            value: '#000',
+            value: theme === 'light' ? '#eeeeff' : '#001',
           },
-          image:
-            "url('https://images.unsplash.com/photo-1633430688358-8e27e527e527?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1722&q=80')",
-          position: '50% 35%',
+          image: '',
+          position: '50% 50%',
           repeat: 'no-repeat',
           size: 'cover',
           opacity: 1,
         },
         backgroundMask: {
           composite: 'destination-out',
-          cover: {
-            color: {
-              value: theme === 'light' ? '#eeeeff' : '#001',
-            },
-            opacity: 1,
-          },
-          enable: true,
+          enable: false,
         },
         fullScreen: {
           enable: true,
@@ -58,14 +51,14 @@ function ParticleReactor() {
               mode: 'push',
             },
             onDiv: {
-              selectors: [],
+              selectors: '#repulse-div',
               enable: false,
-              mode: [],
+              mode: 'repulse',
               type: 'circle',
             },
             onHover: {
               enable: true,
-              mode: 'bubble',
+              mode: 'connect',
               parallax: {
                 enable: false,
                 force: 60,
@@ -90,8 +83,8 @@ function ParticleReactor() {
               distance: 400,
               duration: 2,
               mix: false,
-              opacity: 1,
-              size: 100,
+              opacity: 0.8,
+              size: 40,
               divs: {
                 distance: 200,
                 duration: 0.4,
@@ -219,7 +212,7 @@ function ParticleReactor() {
             },
           },
           color: {
-            value: '#ffffff',
+            value: 'random',
             animation: {
               h: {
                 count: 0,
@@ -296,9 +289,9 @@ function ParticleReactor() {
             },
             consent: false,
             distance: 150,
-            enable: true,
+            enable: false,
             frequency: 1,
-            opacity: 1,
+            opacity: 0.4,
             shadow: {
               blur: 5,
               color: {
@@ -363,7 +356,7 @@ function ParticleReactor() {
             },
             random: false,
             size: false,
-            speed: 2,
+            speed: 6,
             spin: {
               acceleration: 0,
               enable: false,
@@ -385,15 +378,15 @@ function ParticleReactor() {
               area: 800,
               factor: 1000,
             },
-            limit: 0,
-            value: 80,
+            limit: 500,
+            value: 300,
           },
           opacity: {
             random: {
               enable: false,
               minimumValue: 0.1,
             },
-            value: 1,
+            value: 0.5,
             animation: {
               count: 0,
               enable: false,
@@ -484,7 +477,7 @@ function ParticleReactor() {
             },
             value: {
               min: 1,
-              max: 30,
+              max: 5,
             },
             animation: {
               count: 0,
@@ -552,4 +545,4 @@ function ParticleReactor() {
   );
 }
 
-export default ParticleReactor;
+export default PortfolioParticles;

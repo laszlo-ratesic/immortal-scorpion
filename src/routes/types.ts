@@ -7,7 +7,6 @@ enum Pages {
   AboutMe,
   Portfolio,
   Resume,
-  Page3,
   Contact,
   NotFound,
 }

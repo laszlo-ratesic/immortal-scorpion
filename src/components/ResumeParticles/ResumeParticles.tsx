@@ -4,7 +4,7 @@ import { loadFull } from 'tsparticles';
 
 import useTheme from '@/store/theme';
 
-function ParticleReactor() {
+function ResumeParticles() {
   const [theme] = useTheme();
 
   const particlesInit = async (main) => {
@@ -24,24 +24,17 @@ function ParticleReactor() {
         autoPlay: true,
         background: {
           color: {
-            value: '#000',
+            value: theme === 'light' ? '#eeeeff' : '#001',
           },
-          image:
-            "url('https://images.unsplash.com/photo-1633430688358-8e27e527e527?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1722&q=80')",
-          position: '50% 35%',
-          repeat: 'no-repeat',
-          size: 'cover',
+          image: '',
+          position: '',
+          repeat: '',
+          size: '',
           opacity: 1,
         },
         backgroundMask: {
           composite: 'destination-out',
-          cover: {
-            color: {
-              value: theme === 'light' ? '#eeeeff' : '#001',
-            },
-            opacity: 1,
-          },
-          enable: true,
+          enable: false,
         },
         fullScreen: {
           enable: true,
@@ -65,10 +58,10 @@ function ParticleReactor() {
             },
             onHover: {
               enable: true,
-              mode: 'bubble',
+              mode: 'repulse',
               parallax: {
                 enable: false,
-                force: 60,
+                force: 2,
                 smooth: 10,
               },
             },
@@ -87,17 +80,9 @@ function ParticleReactor() {
               distance: 200,
             },
             bubble: {
-              distance: 400,
-              duration: 2,
+              distance: 200,
+              duration: 0.4,
               mix: false,
-              opacity: 1,
-              size: 100,
-              divs: {
-                distance: 200,
-                duration: 0.4,
-                mix: false,
-                selectors: [],
-              },
             },
             connect: {
               distance: 80,
@@ -107,7 +92,7 @@ function ParticleReactor() {
               radius: 60,
             },
             grab: {
-              distance: 400,
+              distance: 100,
               links: {
                 blink: false,
                 consent: false,
@@ -219,13 +204,13 @@ function ParticleReactor() {
             },
           },
           color: {
-            value: '#ffffff',
+            value: '#ff0000',
             animation: {
               h: {
                 count: 0,
-                enable: false,
+                enable: true,
                 offset: 0,
-                speed: 1,
+                speed: 20,
                 sync: true,
               },
               s: {
@@ -292,13 +277,13 @@ function ParticleReactor() {
           links: {
             blink: false,
             color: {
-              value: '#ffffff',
+              value: theme === 'light' ? '#001' : '#eeeeff',
             },
             consent: false,
-            distance: 150,
+            distance: 100,
             enable: true,
             frequency: 1,
-            opacity: 1,
+            opacity: 0.4,
             shadow: {
               blur: 5,
               color: {
@@ -322,8 +307,8 @@ function ParticleReactor() {
               distance: 200,
               enable: false,
               rotate: {
-                x: 600,
-                y: 1200,
+                x: 3000,
+                y: 3000,
               },
             },
             center: {
@@ -363,7 +348,7 @@ function ParticleReactor() {
             },
             random: false,
             size: false,
-            speed: 2,
+            speed: 6,
             spin: {
               acceleration: 0,
               enable: false,
@@ -393,15 +378,14 @@ function ParticleReactor() {
               enable: false,
               minimumValue: 0.1,
             },
-            value: 1,
+            value: 0.5,
             animation: {
               count: 0,
               enable: false,
-              speed: 1,
+              speed: 2,
               sync: false,
               destroy: 'none',
               startValue: 'random',
-              minimumValue: 0.1,
             },
           },
           orbit: {
@@ -479,21 +463,20 @@ function ParticleReactor() {
           },
           size: {
             random: {
-              enable: true,
+              enable: false,
               minimumValue: 1,
             },
             value: {
-              min: 1,
-              max: 30,
+              min: 0.1,
+              max: 3,
             },
             animation: {
               count: 0,
               enable: false,
-              speed: 40,
+              speed: 5,
               sync: false,
               destroy: 'none',
               startValue: 'random',
-              minimumValue: 0.1,
             },
           },
           stroke: {
@@ -552,4 +535,4 @@ function ParticleReactor() {
   );
 }
 
-export default ParticleReactor;
+export default ResumeParticles;
