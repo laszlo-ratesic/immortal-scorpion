@@ -3,8 +3,17 @@
 }
 
 .nav-btn-active {
-  --button-primary-color: '#f3c8adp';
-  --button-secondary-color: '#f3c8adp';
+  --button-primary-color: #f3c8ad;
+  --button-primary-color-dark: #734922;
+  --button-primary-color-light: #4c3016;
+  --button-primary-color-hover: #f1bfa0;
+  --button-primary-border: 1px solid #8c633c;
+
+  --button-secondary-color: #f3c8ad;
+  --button-secondary-color-dark: #734922;
+  --button-secondary-color-light: #4c3016;
+  --button-secondary-color-hover: #f1bfa0;
+  --button-secondary-border: 1px solid #8c633c;
 }
 
 @media screen and (max-width: 768px) {

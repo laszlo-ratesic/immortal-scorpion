@@ -1,14 +1,11 @@
+import { Dispatch } from 'react';
 import 'react-awesome-button/dist/themes/theme-c137.css';
 import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
 import { Link } from 'react-router-dom';
 
-import ContactMailIcon from '@mui/icons-material/ContactMail';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import HomeIcon from '@mui/icons-material/Home';
 import ThemeIcon from '@mui/icons-material/InvertColors';
 import MenuIcon from '@mui/icons-material/Menu';
-import SummarizeIcon from '@mui/icons-material/Summarize';
-import TerminalIcon from '@mui/icons-material/Terminal';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import AppBar from '@mui/material/AppBar';
@@ -19,7 +16,7 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 
-import { FlexBox } from '@/components/styled';
+import { FlexBetween, FlexBox } from '@/components/styled';
 import { repository, title } from '@/config';
 import useHotKeysDialog from '@/store/hotkeys';
 import useNotifications from '@/store/notifications';
@@ -30,7 +27,21 @@ import './Header.css';
 import { HotKeysButton } from './styled';
 import { getRandomJoke } from './utils';
 
-function Header() {
+interface IProps {
+  name: string;
+  path: string;
+  icon: JSX.Element;
+}
+
+function Header({
+  sections = [],
+  currentSection,
+  setCurrentSection,
+}: {
+  sections: IProps[];
+  currentSection: IProps;
+  setCurrentSection: Dispatch<IProps>;
+}) {
   const [, sidebarActions] = useSidebar();
   const [, themeActions] = useTheme();
   const [, notificationsActions] = useNotifications();
@@ -80,34 +91,26 @@ function Header() {
               {title}
             </Button>
           </FlexBox>
-          <Tooltip title="About Me" arrow>
-            <IconButton component={Link} to="/">
-              <AwesomeButton className="nav-btn" type={theme === 'light' ? 'primary' : 'secondary'}>
-                <HomeIcon />
-              </AwesomeButton>
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Portfolio" arrow>
-            <IconButton component={Link} to="/portfolio">
-              <AwesomeButton className="nav-btn" type={theme === 'light' ? 'primary' : 'secondary'}>
-                <TerminalIcon />
-              </AwesomeButton>
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Resume" arrow>
-            <IconButton component={Link} to="/resume">
-              <AwesomeButton className="nav-btn" type={theme === 'light' ? 'primary' : 'secondary'}>
-                <SummarizeIcon />
-              </AwesomeButton>
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Contact" arrow>
-            <IconButton component={Link} to="/contact">
-              <AwesomeButton className="nav-btn" type={theme === 'light' ? 'primary' : 'secondary'}>
-                <ContactMailIcon />
-              </AwesomeButton>
-            </IconButton>
-          </Tooltip>
+          <FlexBetween>
+            {sections.map((section) => (
+              <Tooltip key={section.name} title={section.name} style={{ margin: '0 1rem' }} arrow>
+                <IconButton
+                  onClick={() => setCurrentSection(section)}
+                  component={Link}
+                  to={section.path}
+                >
+                  <AwesomeButton
+                    className={`nav-btn ${
+                      currentSection.name === section.name && 'nav-btn-active'
+                    }`}
+                    type={theme === 'light' ? 'primary' : 'secondary'}
+                  >
+                    {section.icon}
+                  </AwesomeButton>
+                </IconButton>
+              </Tooltip>
+            ))}
+          </FlexBetween>
           <FlexBox>
             <Divider orientation="vertical" flexItem />
             <Tooltip title="Hot keys" arrow>

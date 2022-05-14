@@ -1,6 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import HomeIcon from '@mui/icons-material/Home';
+import SummarizeIcon from '@mui/icons-material/Summarize';
+import TerminalIcon from '@mui/icons-material/Terminal';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import { withErrorHandler } from '@/error-handling';
@@ -13,6 +17,31 @@ import SW from '@/sections/SW';
 import Sidebar from '@/sections/Sidebar';
 
 function App() {
+  const [sections] = useState([
+    {
+      name: 'About Me',
+      path: '/',
+      icon: <HomeIcon />,
+    },
+    {
+      name: 'Portfolio',
+      path: '/portfolio',
+      icon: <TerminalIcon />,
+    },
+    {
+      name: 'Resume',
+      path: '/resume',
+      icon: <SummarizeIcon />,
+    },
+    {
+      name: 'Contact',
+      path: '/contact',
+      icon: <ContactMailIcon />,
+    },
+  ]);
+
+  const [currentSection, setCurrentSection] = useState(sections[0]);
+
   return (
     <Fragment>
       <CssBaseline />
@@ -20,7 +49,11 @@ function App() {
       <HotKeys />
       <SW />
       <BrowserRouter>
-        <Header />
+        <Header
+          sections={sections}
+          currentSection={currentSection}
+          setCurrentSection={setCurrentSection}
+        />
         <Sidebar />
         <Pages />
       </BrowserRouter>

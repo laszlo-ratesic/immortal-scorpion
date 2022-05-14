@@ -5,6 +5,10 @@ const FlexBox = styled(Box)({
   display: 'flex',
 });
 
+const FlexBetween = styled(FlexBox)({
+  justifyContent: 'space-between',
+});
+
 const ColumnFlexBox = styled(FlexBox)({
   flexDirection: 'column',
   justifyContent: 'space-between',
@@ -22,4 +26,4 @@ const FullSizeCenteredFlexBox = styled(CenteredFlexBox)({
   flexWrap: 'wrap',
 });
 
-export { FlexBox, ColumnFlexBox, CenteredFlexBox, FullSizeCenteredFlexBox };
+export { FlexBox, FlexBetween, ColumnFlexBox, CenteredFlexBox, FullSizeCenteredFlexBox };
