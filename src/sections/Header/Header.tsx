@@ -21,6 +21,7 @@ import useNotifications from '@/store/notifications';
 import useSidebar from '@/store/sidebar';
 import useTheme from '@/store/theme';
 
+import './Header.css';
 import { HotKeysButton } from './styled';
 import { getRandomJoke } from './utils';
 
