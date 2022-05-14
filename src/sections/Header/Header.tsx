@@ -72,15 +72,13 @@ function Header() {
             </Button>
           </FlexBox>
           <FlexBox>
-            <FlexBox>
-              <Tooltip title="Hot keys" arrow>
-                <HotKeysButton size="small" onClick={hotKeysDialogActions.open}>
-                  <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
-                    alt + /
-                  </AwesomeButton>
-                </HotKeysButton>
-              </Tooltip>
-            </FlexBox>
+            <Tooltip title="Hot keys" arrow>
+              <HotKeysButton size="small" onClick={hotKeysDialogActions.open}>
+                <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                  alt + /
+                </AwesomeButton>
+              </HotKeysButton>
+            </Tooltip>
             <Divider orientation="vertical" flexItem />
             <Tooltip title="Fork me on Github" arrow>
               <IconButton color="info" size="large" component="a" href={repository} target="_blank">
