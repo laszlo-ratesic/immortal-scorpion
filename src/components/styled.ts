@@ -8,6 +8,7 @@ const FlexBox = styled(Box)({
 const ColumnFlexBox = styled(FlexBox)({
   flexDirection: 'column',
   justifyContent: 'space-between',
+  alignItems: 'center',
 });
 
 const CenteredFlexBox = styled(FlexBox)({

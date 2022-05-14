@@ -27,7 +27,7 @@ function ParticleReactor() {
             value: '#000',
           },
           image:
-            "url('https://images.unsplash.com/photo-1633430688358-8e27e527e527?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1722&q=80')",
+            "url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')",
           position: '50% 35%',
           repeat: 'no-repeat',
           size: 'cover',

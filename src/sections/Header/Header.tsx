@@ -1,9 +1,14 @@
 import 'react-awesome-button/dist/themes/theme-c137.css';
 import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
+import { Link } from 'react-router-dom';
 
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import HomeIcon from '@mui/icons-material/Home';
 import ThemeIcon from '@mui/icons-material/InvertColors';
 import MenuIcon from '@mui/icons-material/Menu';
+import SummarizeIcon from '@mui/icons-material/Summarize';
+import TerminalIcon from '@mui/icons-material/Terminal';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import AppBar from '@mui/material/AppBar';
@@ -61,17 +66,50 @@ function Header() {
               onClick={sidebarActions.toggle}
               size="large"
               edge="start"
-              color="info"
+              color={theme === 'light' ? 'secondary' : 'warning'}
               aria-label="menu"
               sx={{ mr: 1 }}
             >
               <MenuIcon />
             </IconButton>
-            <Button onClick={showNotification} color="info">
+            <Button
+              onClick={showNotification}
+              style={{ fontFamily: '"Gilroy-Bold", "Open Sans", sans-serif' }}
+              color={theme === 'light' ? 'secondary' : 'warning'}
+            >
               {title}
             </Button>
           </FlexBox>
+          <Tooltip title="About Me" arrow>
+            <IconButton component={Link} to="/">
+              <AwesomeButton className="nav-btn" type={theme === 'light' ? 'primary' : 'secondary'}>
+                <HomeIcon />
+              </AwesomeButton>
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Portfolio" arrow>
+            <IconButton component={Link} to="/portfolio">
+              <AwesomeButton className="nav-btn" type={theme === 'light' ? 'primary' : 'secondary'}>
+                <TerminalIcon />
+              </AwesomeButton>
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Resume" arrow>
+            <IconButton component={Link} to="/resume">
+              <AwesomeButton className="nav-btn" type={theme === 'light' ? 'primary' : 'secondary'}>
+                <SummarizeIcon />
+              </AwesomeButton>
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Contact" arrow>
+            <IconButton component={Link} to="/contact">
+              <AwesomeButton className="nav-btn" type={theme === 'light' ? 'primary' : 'secondary'}>
+                <ContactMailIcon />
+              </AwesomeButton>
+            </IconButton>
+          </Tooltip>
           <FlexBox>
+            <Divider orientation="vertical" flexItem />
             <Tooltip title="Hot keys" arrow>
               <HotKeysButton size="small" onClick={hotKeysDialogActions.open}>
                 <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
