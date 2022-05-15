@@ -30,7 +30,7 @@ function Resume() {
       <Meta title="Resume" />
       <FullSizeCenteredFlexBox>
         <ColumnFlexBox>
-          <Typography variant="h3" style={{ marginBottom: '1em' }}>
+          <Typography variant="h3" style={{ margin: '2rem auto' }}>
             Resume
           </Typography>
           <AwesomeButton
@@ -38,7 +38,7 @@ function Resume() {
             type={theme === 'light' ? 'primary' : 'secondary'}
             href={pdf}
             target="_blank"
-            style={{ maxWidth: '250px', marginBottom: '1em' }}
+            style={{ maxWidth: '250px', marginBottom: '2rem' }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV
@@ -51,7 +51,7 @@ function Resume() {
             type={theme === 'light' ? 'primary' : 'secondary'}
             href={pdf}
             target="_blank"
-            style={{ maxWidth: '250px', marginBottom: '1em' }}
+            style={{ maxWidth: '250px', marginTop: '2rem' }}
           >
             <AiOutlineDownload />
             &nbsp;Download CV

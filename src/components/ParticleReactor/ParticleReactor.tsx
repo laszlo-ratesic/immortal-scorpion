@@ -132,7 +132,7 @@ function ParticleReactor() {
         background: {
           color: '#001',
           image: "url('./hero.svg')",
-          position: '50% 50%',
+          position: '50% 25%',
           repeat: 'no-repeat',
           size: 'cover',
         },
