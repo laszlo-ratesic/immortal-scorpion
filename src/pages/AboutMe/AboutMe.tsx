@@ -1,5 +1,6 @@
 import { Paper } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
+import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
 import Meta from '@/components/Meta';
@@ -50,7 +51,6 @@ function AboutMe() {
           sx={{
             margin: '3em auto',
             width: '80%',
-            cursor: 'pointer',
             padding: '1em',
             opacity: '.96',
           }}
@@ -66,18 +66,32 @@ function AboutMe() {
             sx={{ justifyContent: 'space-around', padding: '2em 1em' }}
             flexDirection={isPortrait ? 'column' : 'row'}
           >
-            <Image alt="react-router" src={rrLogo} style={{ transform: 'scale(.7)' }} />
-            <Image alt="vite" src={viteLogo} style={{ transform: 'scale(.7)' }} />
-            <Image alt="typescript" src={tsLogo} style={{ transform: 'scale(.7)' }} />
-            <Image
-              alt="react"
-              src={reactLogo}
-              style={{ transform: 'scale(.7)' }}
-              sx={{ width, height }}
-            />
-            <Image alt="mui" src={muiLogo} style={{ transform: 'scale(.7)' }} />
-            <Image alt="recoil" src={recoilLogo} style={{ transform: 'scale(.7)' }} />
-            <Image alt="pwa" src={pwaLogo} style={{ transform: 'scale(.7)' }} />
+            <Tooltip title="React-Router" style={{ margin: '0 2em' }} arrow placement="top">
+              <Image alt="react-router" src={rrLogo} style={{ transform: 'scale(.7)' }} />
+            </Tooltip>
+            <Tooltip title="Vite" style={{ margin: '0 2em' }} arrow>
+              <Image alt="vite" src={viteLogo} style={{ transform: 'scale(.7)' }} />
+            </Tooltip>
+            <Tooltip title="TypeScript" style={{ margin: '0 2em' }} arrow placement="top">
+              <Image alt="typescript" src={tsLogo} style={{ transform: 'scale(.7)' }} />
+            </Tooltip>
+            <Tooltip title="React" style={{ margin: '0 2em' }} arrow>
+              <Image
+                alt="react"
+                src={reactLogo}
+                style={{ transform: 'scale(.7)' }}
+                sx={{ width, height }}
+              />
+            </Tooltip>
+            <Tooltip title="MUI" style={{ margin: '0 2em' }} arrow placement="top">
+              <Image alt="mui" src={muiLogo} style={{ transform: 'scale(.7)' }} />
+            </Tooltip>
+            <Tooltip title="Recoil" style={{ margin: '0 2em' }} arrow>
+              <Image alt="recoil" src={recoilLogo} style={{ transform: 'scale(.7)' }} />
+            </Tooltip>
+            <Tooltip title="PWA" style={{ margin: '0 2em' }} arrow placement="top">
+              <Image alt="pwa" src={pwaLogo} style={{ transform: 'scale(.7)' }} />
+            </Tooltip>
           </FullSizeCenteredFlexBox>
         </Paper>
       </ColumnFlexBox>
