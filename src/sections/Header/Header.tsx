@@ -18,6 +18,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 import { FlexBetween, FlexBox } from '@/components/styled';
 import { repository, title } from '@/config';
+import useOrientation from '@/hooks/useOrientation';
 import useHotKeysDialog from '@/store/hotkeys';
 import useNotifications from '@/store/notifications';
 import useSidebar from '@/store/sidebar';
@@ -47,6 +48,7 @@ function Header({
   const [, notificationsActions] = useNotifications();
   const [, hotKeysDialogActions] = useHotKeysDialog();
   const [theme] = useTheme();
+  const isPortrait = useOrientation();
 
   function showNotification() {
     notificationsActions.push({
@@ -91,52 +93,67 @@ function Header({
               {title}
             </Button>
           </FlexBox>
-          <FlexBetween>
-            {sections.map((section) => (
-              <Tooltip key={section.name} title={section.name} style={{ margin: '0 1rem' }} arrow>
-                <IconButton
-                  onClick={() => setCurrentSection(section)}
-                  component={Link}
-                  to={section.path}
-                >
-                  <AwesomeButton
-                    className={`nav-btn ${
-                      currentSection.name === section.name && 'nav-btn-active'
-                    }`}
-                    type={theme === 'light' ? 'primary' : 'secondary'}
+          {!isPortrait && (
+            <>
+              <FlexBetween>
+                {sections.map((section) => (
+                  <Tooltip
+                    key={section.name}
+                    title={section.name}
+                    style={{ margin: '0 1rem' }}
+                    arrow
                   >
-                    {section.icon}
-                  </AwesomeButton>
-                </IconButton>
-              </Tooltip>
-            ))}
-          </FlexBetween>
-          <FlexBox>
-            <Divider orientation="vertical" flexItem />
-            <Tooltip title="Hot keys" arrow>
-              <HotKeysButton size="small" onClick={hotKeysDialogActions.open}>
-                <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
-                  alt + /
-                </AwesomeButton>
-              </HotKeysButton>
-            </Tooltip>
-            <Divider orientation="vertical" flexItem />
-            <Tooltip title="Fork me on Github" arrow>
-              <IconButton color="info" size="large" component="a" href={repository} target="_blank">
-                <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
-                  <GitHubIcon />
-                </AwesomeButton>
-              </IconButton>
-            </Tooltip>
-            <Divider orientation="vertical" flexItem />
-            <Tooltip title="Switch theme" arrow>
-              <IconButton color="info" edge="end" size="large" onClick={themeActions.toggle}>
-                <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
-                  <ThemeIcon />
-                </AwesomeButton>
-              </IconButton>
-            </Tooltip>
-          </FlexBox>
+                    <IconButton
+                      onClick={() => setCurrentSection(section)}
+                      component={Link}
+                      to={section.path}
+                    >
+                      <AwesomeButton
+                        className={`nav-btn ${
+                          currentSection.name === section.name && 'nav-btn-active'
+                        }`}
+                        type={theme === 'light' ? 'primary' : 'secondary'}
+                      >
+                        {section.icon}
+                      </AwesomeButton>
+                    </IconButton>
+                  </Tooltip>
+                ))}
+              </FlexBetween>
+              <FlexBox>
+                <Divider orientation="vertical" flexItem />
+                <Tooltip title="Hot keys" arrow>
+                  <HotKeysButton size="small" onClick={hotKeysDialogActions.open}>
+                    <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                      alt+/
+                    </AwesomeButton>
+                  </HotKeysButton>
+                </Tooltip>
+                <Divider orientation="vertical" flexItem />
+                <Tooltip title="Fork me on Github" arrow>
+                  <IconButton
+                    color="info"
+                    size="large"
+                    component="a"
+                    href={repository}
+                    target="_blank"
+                  >
+                    <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                      <GitHubIcon />
+                    </AwesomeButton>
+                  </IconButton>
+                </Tooltip>
+                <Divider orientation="vertical" flexItem />
+                <Tooltip title="Switch theme" arrow>
+                  <IconButton color="info" edge="end" size="large" onClick={themeActions.toggle}>
+                    <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                      <ThemeIcon />
+                    </AwesomeButton>
+                  </IconButton>
+                </Tooltip>
+              </FlexBox>
+            </>
+          )}
         </Toolbar>
       </AppBar>
     </Box>

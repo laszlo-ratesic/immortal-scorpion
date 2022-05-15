@@ -16,8 +16,11 @@
   --button-secondary-border: 1px solid #8c633c;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
   .css-gvoll6 {
+    display: none;
+  }
+  .css-mbiude {
     display: none;
   }
 }
