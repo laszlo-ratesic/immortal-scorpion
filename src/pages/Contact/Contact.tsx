@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import ContactForm from '@/components/ContactForm/ContactForm';
 import ContactParticles from '@/components/ContactParticles';
 import Meta from '@/components/Meta';
 import { FullSizeCenteredFlexBox } from '@/components/styled';
@@ -13,6 +14,7 @@ function Contact() {
       <Meta title="Contact" />
       <FullSizeCenteredFlexBox flexDirection="column">
         <Typography variant="h3">Contact</Typography>
+        <ContactForm />
         <Button
           to={`/${Math.random().toString()}`}
           component={Link}
