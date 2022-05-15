@@ -10,6 +10,7 @@ import { person } from '@/portfolio';
 
 import muiLogo from './logos/mui.svg';
 import pwaLogo from './logos/pwa.svg';
+import reactLogo from './logos/react_ed.svg';
 import recoilLogo from './logos/recoil.svg';
 import rrLogo from './logos/rr.svg';
 import tsLogo from './logos/ts.svg';
@@ -19,6 +20,8 @@ import { Image } from './styled';
 function AboutMe() {
   const isPortrait = useOrientation();
   const { full_name, image, bio } = person;
+  const width = isPortrait ? '40%' : '30%';
+  const height = isPortrait ? '30%' : '40%';
 
   return (
     <>
@@ -47,9 +50,9 @@ function AboutMe() {
           sx={{
             margin: '3em auto',
             width: '80%',
-            opacity: '.8',
             cursor: 'pointer',
             padding: '1em',
+            opacity: '.96',
           }}
         >
           <Typography
@@ -63,12 +66,18 @@ function AboutMe() {
             sx={{ justifyContent: 'space-around', padding: '2em 1em' }}
             flexDirection={isPortrait ? 'column' : 'row'}
           >
-            <Image alt="react-router" src={rrLogo} />
-            <Image alt="vite" src={viteLogo} />
-            <Image alt="typescript" src={tsLogo} />
-            <Image alt="mui" src={muiLogo} />
-            <Image alt="recoil" src={recoilLogo} />
-            <Image alt="pwa" src={pwaLogo} />
+            <Image alt="react-router" src={rrLogo} style={{ transform: 'scale(.7)' }} />
+            <Image alt="vite" src={viteLogo} style={{ transform: 'scale(.7)' }} />
+            <Image alt="typescript" src={tsLogo} style={{ transform: 'scale(.7)' }} />
+            <Image
+              alt="react"
+              src={reactLogo}
+              style={{ transform: 'scale(.7)' }}
+              sx={{ width, height }}
+            />
+            <Image alt="mui" src={muiLogo} style={{ transform: 'scale(.7)' }} />
+            <Image alt="recoil" src={recoilLogo} style={{ transform: 'scale(.7)' }} />
+            <Image alt="pwa" src={pwaLogo} style={{ transform: 'scale(.7)' }} />
           </FullSizeCenteredFlexBox>
         </Paper>
       </ColumnFlexBox>
