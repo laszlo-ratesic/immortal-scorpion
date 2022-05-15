@@ -10,7 +10,7 @@ import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
@@ -75,26 +75,29 @@ function Header({
       <AppBar color="transparent" elevation={1} position="static">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <FlexBox sx={{ alignItems: 'center' }}>
-            <IconButton
-              onClick={sidebarActions.toggle}
-              size="large"
-              edge="start"
-              color={theme === 'light' ? 'secondary' : 'warning'}
-              aria-label="menu"
-              sx={{ mr: 1 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Button
-              onClick={showNotification}
-              style={{ fontFamily: '"Gilroy-Bold", "Open Sans", sans-serif' }}
-              color={theme === 'light' ? 'secondary' : 'warning'}
+            {isPortrait && (
+              <IconButton
+                onClick={sidebarActions.toggle}
+                size="large"
+                edge="start"
+                color={theme === 'light' ? 'secondary' : 'warning'}
+                aria-label="menu"
+                sx={{ mr: 1 }}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
+            <AwesomeButton
+              className="dads-btn"
+              onPress={showNotification}
+              type={theme === 'light' ? 'primary' : 'secondary'}
             >
               {title}
-            </Button>
+            </AwesomeButton>
           </FlexBox>
           {!isPortrait && (
             <>
+              {/* ==============PAGE NAVIGATION============ */}
               <FlexBetween>
                 {sections.map((section) => (
                   <Tooltip
@@ -120,6 +123,7 @@ function Header({
                   </Tooltip>
                 ))}
               </FlexBetween>
+
               <FlexBox>
                 <Divider orientation="vertical" flexItem />
                 <Tooltip title="Hot keys" arrow>

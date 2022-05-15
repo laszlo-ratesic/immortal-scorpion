@@ -13,6 +13,7 @@ const ColumnFlexBox = styled(FlexBox)({
   flexDirection: 'column',
   justifyContent: 'space-between',
   alignItems: 'center',
+  minHeight: '100%',
 });
 
 const CenteredFlexBox = styled(FlexBox)({
