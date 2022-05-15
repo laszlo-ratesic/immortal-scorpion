@@ -5,6 +5,7 @@ const person = {
   full_name: 'Keenan Chiasson',
   resume:
     'https://app.enhancv.com/share/1e1916d5/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic',
+  image: './keenan-chiasson.svg',
 };
 
 const contactInfo = {
