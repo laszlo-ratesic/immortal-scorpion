@@ -5,7 +5,8 @@ const person = {
   full_name: 'Keenan Chiasson',
   resume:
     'https://app.enhancv.com/share/1e1916d5/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic',
-  image: './keenan-chiasson.svg',
+  image: '/keenan-chiasson.svg',
+  bio: 'Full-stack developer leveraging a theatre arts background to drive ambitious projects to completion. Certificate in Full Stack Development from UT Austin, Certified Teacher, and BA from University of Manchester. Experienced with MVC, microservices, relational databases, Lean Agile software methodology, and building REST APIs. My diverse experience working on over 50+ theatre productions has given me a diligent work ethic, strong collaboration skills, and the ability to adapt to a variety of adverse conditions. Hoping to connect with a sticky team that shares my values of Excellence, Boldness, Wisdom, Creativity, and Joy to inspire next-gen artists and builders.',
 };
 
 const contactInfo = {
