@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
 import 'react-awesome-button/dist/themes/theme-c137.css';
-import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton/index.js';
+import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
 import { Link } from 'react-router-dom';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
