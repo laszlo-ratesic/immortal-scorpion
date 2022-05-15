@@ -8,6 +8,7 @@ import ParticleReactor from '@/components/ParticleReactor';
 import { ColumnFlexBox, FullSizeCenteredFlexBox } from '@/components/styled';
 import useOrientation from '@/hooks/useOrientation';
 import { person } from '@/portfolio';
+import Footer from '@/sections/Footer';
 
 import muiLogo from './logos/mui.svg';
 import pwaLogo from './logos/pwa.svg';
@@ -94,6 +95,7 @@ function AboutMe() {
             </Tooltip>
           </FullSizeCenteredFlexBox>
         </Paper>
+        <Footer />
       </ColumnFlexBox>
       <ParticleReactor />
     </>
