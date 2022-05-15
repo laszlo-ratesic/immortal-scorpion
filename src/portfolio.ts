@@ -159,6 +159,13 @@ const skills = {
 
 const projects = [
   {
+    title: 'Schmoozer',
+    description: '💬 Social network API for sharing thoughts with friends',
+    app_url: 'https://drive.google.com/file/d/1EI0ptdC1_V5gZfFV9mlOIe78wfKOQ5c6/view',
+    repo_link: 'https://github.com/laszlo-ratesic/schmoozer',
+    img: '/schmoozer-logo.svg',
+  },
+  {
     title: 'Blockdust',
     description: '🧊 Tech blogging for crypto enthusiasts',
     app_url: 'https://blockdust.herokuapp.com/',
