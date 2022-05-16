@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import HomeIcon from '@mui/icons-material/Home';
@@ -48,7 +48,7 @@ function App() {
       <Notifications />
       <HotKeys />
       <SW />
-      <BrowserRouter>
+      <Router basename={`/`}>
         <Header
           sections={sections}
           currentSection={currentSection}
@@ -56,7 +56,7 @@ function App() {
         />
         <Sidebar />
         <Pages />
-      </BrowserRouter>
+      </Router>
     </Fragment>
   );
 }
