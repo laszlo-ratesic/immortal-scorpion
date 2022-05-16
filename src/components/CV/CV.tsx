@@ -5,8 +5,8 @@ import { Document, Page, pdfjs } from 'react-pdf';
 
 import useTheme from '@/store/theme';
 
-const resumeLink = '/KeenanChiassonResume.pdf';
-const pdf = '/KeenanChiassonResume.pdf';
+const resumeLink = './KeenanChiassonResume.pdf';
+const pdf = './KeenanChiassonResume.pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const CV = () => {
