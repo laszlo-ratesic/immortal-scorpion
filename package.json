@@ -48,7 +48,8 @@
     "react-tsparticles": "^2.0.6",
     "recoil": "^0.7.1",
     "styled-components": "^5.3.5",
-    "tsparticles": "^2.0.6"
+    "tsparticles": "^2.0.6",
+    "web-animation-club": "^0.6.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",

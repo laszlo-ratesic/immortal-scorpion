@@ -1,5 +1,5 @@
 import React from 'react';
-import AwesomeButtonProgress from 'react-awesome-button/src/components/AwesomeButtonProgress';
+import { AwesomeButtonProgress } from 'react-awesome-button';
 
 import { Form, Formik } from 'formik';
 import { InputText } from 'primereact/inputtext';
@@ -109,7 +109,7 @@ const ContactForm: React.FC<Record<string, never>> = () => {
             </div>
             <AwesomeButtonProgress
               type={theme === 'light' ? 'secondary' : 'primary'}
-              style={{ minWidth: '150px' }}
+              size="large"
               disabled={isSubmitting}
             >
               Submit

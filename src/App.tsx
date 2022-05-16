@@ -48,7 +48,7 @@ function App() {
       <Notifications />
       <HotKeys />
       <SW />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <Header
           sections={sections}
           currentSection={currentSection}

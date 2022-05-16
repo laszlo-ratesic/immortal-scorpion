@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
+import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/themes/theme-c137.css';
-import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
 import { Link } from 'react-router-dom';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -24,7 +24,6 @@ import useSidebar from '@/store/sidebar';
 import useTheme from '@/store/theme';
 
 import './Header.css';
-import { HotKeysButton } from './styled';
 import { getRandomJoke } from './utils';
 
 interface IProps {
@@ -126,33 +125,34 @@ function Header({
               <FlexBox>
                 <Divider orientation="vertical" flexItem />
                 <Tooltip title="Hot keys" arrow>
-                  <HotKeysButton size="small" onClick={hotKeysDialogActions.open}>
-                    <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
-                      alt+/
-                    </AwesomeButton>
-                  </HotKeysButton>
+                  <AwesomeButton
+                    onPress={hotKeysDialogActions.open}
+                    type={theme === 'light' ? 'primary' : 'secondary'}
+                  >
+                    alt+/
+                  </AwesomeButton>
                 </Tooltip>
                 <Divider orientation="vertical" flexItem />
                 <Tooltip title="Fork me on Github" arrow>
-                  <IconButton
-                    color="info"
-                    size="large"
-                    component="a"
+                  <a
+                    style={{ textDecoration: 'none', color: '#eeeeff' }}
                     href={repository}
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
                       <GitHubIcon />
                     </AwesomeButton>
-                  </IconButton>
+                  </a>
                 </Tooltip>
                 <Divider orientation="vertical" flexItem />
                 <Tooltip title="Switch theme" arrow>
-                  <IconButton color="info" edge="end" size="large" onClick={themeActions.toggle}>
-                    <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
-                      <ThemeIcon />
-                    </AwesomeButton>
-                  </IconButton>
+                  <AwesomeButton
+                    onPress={themeActions.toggle}
+                    type={theme === 'light' ? 'primary' : 'secondary'}
+                  >
+                    <ThemeIcon />
+                  </AwesomeButton>
                 </Tooltip>
               </FlexBox>
             </>

@@ -1,18 +1,19 @@
 import Particles from 'react-tsparticles';
 
 import { loadFull } from 'tsparticles';
+import { Container, Engine } from 'tsparticles-engine';
 
 import useTheme from '@/store/theme';
 
 function ResumeParticles() {
   const [theme] = useTheme();
 
-  const particlesInit = async (main) => {
+  const particlesInit = async (main: Engine): Promise<void> => {
     await loadFull(main);
   };
 
-  const particlesLoaded = (container) => {
-    console.log(container);
+  const particlesLoaded = async (container: Container): Promise<void> => {
+    await console.log(container);
   };
 
   return (
@@ -50,12 +51,6 @@ function ResumeParticles() {
               enable: true,
               mode: 'push',
             },
-            onDiv: {
-              selectors: [],
-              enable: false,
-              mode: [],
-              type: 'circle',
-            },
             onHover: {
               enable: true,
               mode: 'repulse',
@@ -71,7 +66,6 @@ function ResumeParticles() {
             attract: {
               distance: 200,
               duration: 0.4,
-              easing: 'ease-out-quad',
               factor: 1,
               maxSpeed: 50,
               speed: 1,
@@ -132,16 +126,6 @@ function ResumeParticles() {
               factor: 100,
               speed: 1,
               maxSpeed: 50,
-              easing: 'ease-out-quad',
-              divs: {
-                distance: 200,
-                duration: 0.4,
-                factor: 100,
-                speed: 1,
-                maxSpeed: 50,
-                easing: 'ease-out-quad',
-                selectors: [],
-              },
             },
             slow: {
               factor: 3,
@@ -230,7 +214,6 @@ function ResumeParticles() {
             },
           },
           destroy: {
-            mode: 'none',
             split: {
               count: 1,
               factor: {

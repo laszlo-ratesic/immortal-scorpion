@@ -1,18 +1,19 @@
 import Particles from 'react-tsparticles';
 
 import { loadFull } from 'tsparticles';
+import type { Container, Engine } from 'tsparticles-engine';
 
 import useTheme from '@/store/theme';
 
 function ParticleReactor() {
   const [theme] = useTheme();
 
-  const particlesInit = async (main) => {
+  const particlesInit = async (main: Engine): Promise<void> => {
     await loadFull(main);
   };
 
-  const particlesLoaded = (container) => {
-    console.log(container);
+  const particlesLoaded = async (container: Container): Promise<void> => {
+    await console.log(container);
   };
 
   return (

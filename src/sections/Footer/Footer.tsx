@@ -1,4 +1,4 @@
-import AwesomeButtonSocial from 'react-awesome-button/src/components/AwesomeButtonSocial';
+import { AwesomeButtonSocial } from 'react-awesome-button';
 
 import { person } from '../../portfolio';
 import './Footer.css';
@@ -11,7 +11,6 @@ export default function Footer() {
           style={{ paddingRight: '1rem' }}
           onPress={(e: Event) => e.preventDefault()}
           type="github"
-          disabled="true"
         >
           <a
             href="https://github.com/laszlo-ratesic"
@@ -36,7 +35,7 @@ export default function Footer() {
       <p className="footer-text">
         Made with <span role="img">❤️</span> by {person.full_name}
       </p>
-      <div className="footer-social">
+      <div className="footer-social" style={{ display: 'flex', justifyContent: 'space-between' }}>
         <a
           href="https://github.com/laszlo-ratesic"
           style={{ textDecoration: 'none', color: '#eeeeff' }}
@@ -44,7 +43,7 @@ export default function Footer() {
           rel="noreferrer"
         >
           <AwesomeButtonSocial
-            style={{ paddingRight: '1rem' }}
+            style={{ paddingRight: '.5rem' }}
             onPress={(e: Event) => e.preventDefault()}
             type="github"
           >
@@ -52,7 +51,7 @@ export default function Footer() {
           </AwesomeButtonSocial>
         </a>
         <AwesomeButtonSocial
-          style={{ padding: '0 1rem' }}
+          style={{ padding: '0 .5rem' }}
           type="linkedin"
           url="https://linkedin.com/in/keenan-chiasson"
         >
@@ -65,7 +64,7 @@ export default function Footer() {
           rel="noreferrer"
         >
           <AwesomeButtonSocial
-            style={{ paddingLeft: '1rem' }}
+            style={{ paddingLeft: '.5rem' }}
             type="youtube"
             onPress={(e: Event) => e.preventDefault()}
           >

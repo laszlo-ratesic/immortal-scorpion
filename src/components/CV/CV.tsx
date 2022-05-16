@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import AwesomeButton from 'react-awesome-button/src/components/AwesomeButton';
+import { AwesomeButton } from 'react-awesome-button';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { Document, Page, pdfjs } from 'react-pdf';
 
