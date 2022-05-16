@@ -8,6 +8,8 @@
 
 ## Synopsis
 
+LINK TO DEPLOYED APPLICATION: https://laszlo-ratesic.github.io/immortal-scorpion/#/
+
 This project (a GitHub template) is an opinionated setup for modern web applications.
 It's a combination of essential (and minimal) libraries/components/utils/etc., which developers usually need during the process of making modern React applications.
 
