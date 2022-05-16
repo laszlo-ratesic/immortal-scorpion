@@ -86,14 +86,15 @@ function Header({
                 <MenuIcon />
               </IconButton>
             )}
-            <div onClick={showNotification}>
+            <IconButton size="large" onClick={showNotification}>
               <AwesomeButton
                 className="dads-btn"
                 type={theme === 'light' ? 'primary' : 'secondary'}
+                size="large"
               >
                 {title}
               </AwesomeButton>
-            </div>
+            </IconButton>
           </FlexBox>
           {!isPortrait && (
             <>
@@ -127,7 +128,7 @@ function Header({
               <FlexBox>
                 <Divider orientation="vertical" flexItem />
                 <Tooltip title="Hot keys" arrow>
-                  <HotKeysButton onClick={hotKeysDialogActions.open}>
+                  <HotKeysButton size="small" onClick={hotKeysDialogActions.open}>
                     <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
                       alt+/
                     </AwesomeButton>
