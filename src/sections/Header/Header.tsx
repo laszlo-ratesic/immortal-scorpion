@@ -18,12 +18,12 @@ import Tooltip from '@mui/material/Tooltip';
 import { FlexBetween, FlexBox } from '@/components/styled';
 import { repository, title } from '@/config';
 import useOrientation from '@/hooks/useOrientation';
+import '@/sections/Header/Header.css';
 import useHotKeysDialog from '@/store/hotkeys';
 import useNotifications from '@/store/notifications';
 import useSidebar from '@/store/sidebar';
 import useTheme from '@/store/theme';
 
-import './Header.css';
 import { HotKeysButton } from './styled';
 import { getRandomJoke } from './utils';
 
