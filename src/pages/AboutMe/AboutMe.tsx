@@ -10,6 +10,7 @@ import useOrientation from '@/hooks/useOrientation';
 import { person } from '@/portfolio';
 import Footer from '@/sections/Footer';
 
+import keenanAvatar from './logos/keenan-chiasson.svg';
 import muiLogo from './logos/mui.svg';
 import pwaLogo from './logos/pwa.svg';
 import reactLogo from './logos/react_ed.svg';
@@ -21,7 +22,7 @@ import { Image } from './styled';
 
 function AboutMe() {
   const isPortrait = useOrientation();
-  const { full_name, image, bio } = person;
+  const { full_name, bio } = person;
   const width = isPortrait ? '40%' : '30%';
   const height = isPortrait ? '30%' : '40%';
 
@@ -31,7 +32,7 @@ function AboutMe() {
       <ColumnFlexBox>
         <Avatar
           alt={full_name}
-          src={image}
+          src={keenanAvatar}
           sx={{ width: 360, height: 360 }}
           style={{ margin: '2em auto' }}
         />
