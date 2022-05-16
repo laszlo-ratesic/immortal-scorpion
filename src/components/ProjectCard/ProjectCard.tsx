@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react';
 import { config, useSpring } from 'react-spring';
 
-import { Container, StyledH1, StyledImg, StyledP } from './styled';
+import { Container, StyledH1, StyledH3, StyledImg, StyledP } from './styled';
 
 const calc = (x: number, y: number) => [
   -(y - window.innerHeight / 2) / 20,
@@ -23,7 +23,7 @@ interface IProps {
 const ProjectCard: FC<IProps> = (currentProject: IProps): ReactElement => {
   const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: config.default }));
 
-  const { title, description, app_url, img } = currentProject;
+  const { title, description, app_url, repo_link, img } = currentProject;
 
   return (
     <Container
@@ -39,6 +39,27 @@ const ProjectCard: FC<IProps> = (currentProject: IProps): ReactElement => {
       <StyledImg src={img} />
       <StyledH1>{title}</StyledH1>
       <StyledP>{description}</StyledP>
+      <StyledH3>
+        <a
+          style={{ textDecoration: 'none', color: 'initial' }}
+          href={app_url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          DEMO
+        </a>
+      </StyledH3>
+      <hr style={{ width: '18rem' }} />
+      <StyledH3>
+        <a
+          style={{ textDecoration: 'none', color: 'inherit' }}
+          href={repo_link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          CODE
+        </a>
+      </StyledH3>
     </Container>
   );
 };

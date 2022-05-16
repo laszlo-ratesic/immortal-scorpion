@@ -10,7 +10,7 @@ import Footer from '@/sections/Footer';
 function Portfolio() {
   return (
     <>
-      <Meta title="projects" />
+      <Meta title="Portfolio" />
       <Typography variant="h3" style={{ textAlign: 'center', margin: '1rem auto' }}>
         Projects
       </Typography>

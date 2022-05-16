@@ -16,7 +16,6 @@ const Container = styled(animated.div)`
   backdrop-filter: blur(10px);
   border: 2px solid transparent;
   background-clip: border-box;
-  cursor: pointer;
   transform: translateZ(0, 0, 0);
 `;
 
@@ -35,12 +34,14 @@ const StyledH1 = styled.h1`
   text-align: center;
 `;
 
-// const StyledH3 = styled.h3`
-//   line-height: 1.5;
-//   letter-spacing: 1.15;
-//   font-family: 'Gilroy-Regular';
-//   font-size: 20px;
-// `;
+const StyledH3 = styled.h3`
+  line-height: 1.5;
+  letter-spacing: 1.15;
+  font-family: 'Gilroy-Regular';
+  font-size: 20px;
+  text-align: center;
+  width: 36rem;
+`;
 
 const StyledP = styled.p`
   width: 18rem;
@@ -49,4 +50,4 @@ const StyledP = styled.p`
   text-align: center;
 `;
 
-export { Container, StyledH1, StyledImg, StyledP };
+export { Container, StyledH1, StyledH3, StyledImg, StyledP };
