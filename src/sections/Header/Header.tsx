@@ -24,6 +24,7 @@ import useSidebar from '@/store/sidebar';
 import useTheme from '@/store/theme';
 
 import './Header.css';
+import { HotKeysButton } from './styled';
 import { getRandomJoke } from './utils';
 
 interface IProps {
@@ -85,13 +86,14 @@ function Header({
                 <MenuIcon />
               </IconButton>
             )}
-            <AwesomeButton
-              className="dads-btn"
-              onPress={showNotification}
-              type={theme === 'light' ? 'primary' : 'secondary'}
-            >
-              {title}
-            </AwesomeButton>
+            <div onClick={showNotification}>
+              <AwesomeButton
+                className="dads-btn"
+                type={theme === 'light' ? 'primary' : 'secondary'}
+              >
+                {title}
+              </AwesomeButton>
+            </div>
           </FlexBox>
           {!isPortrait && (
             <>
@@ -105,9 +107,9 @@ function Header({
                     arrow
                   >
                     <IconButton
-                      onClick={() => setCurrentSection(section)}
                       component={Link}
                       to={section.path}
+                      onClick={() => setCurrentSection(section)}
                     >
                       <AwesomeButton
                         className={`nav-btn ${
@@ -125,16 +127,17 @@ function Header({
               <FlexBox>
                 <Divider orientation="vertical" flexItem />
                 <Tooltip title="Hot keys" arrow>
-                  <AwesomeButton
-                    onPress={hotKeysDialogActions.open}
-                    type={theme === 'light' ? 'primary' : 'secondary'}
-                  >
-                    alt+/
-                  </AwesomeButton>
+                  <HotKeysButton onClick={hotKeysDialogActions.open}>
+                    <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                      alt+/
+                    </AwesomeButton>
+                  </HotKeysButton>
                 </Tooltip>
                 <Divider orientation="vertical" flexItem />
                 <Tooltip title="Fork me on Github" arrow>
-                  <a
+                  <IconButton
+                    size="large"
+                    component="a"
                     style={{ textDecoration: 'none', color: '#eeeeff' }}
                     href={repository}
                     target="_blank"
@@ -143,16 +146,15 @@ function Header({
                     <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
                       <GitHubIcon />
                     </AwesomeButton>
-                  </a>
+                  </IconButton>
                 </Tooltip>
                 <Divider orientation="vertical" flexItem />
                 <Tooltip title="Switch theme" arrow>
-                  <AwesomeButton
-                    onPress={themeActions.toggle}
-                    type={theme === 'light' ? 'primary' : 'secondary'}
-                  >
-                    <ThemeIcon />
-                  </AwesomeButton>
+                  <IconButton edge="end" size="large" onClick={themeActions.toggle}>
+                    <AwesomeButton type={theme === 'light' ? 'primary' : 'secondary'}>
+                      <ThemeIcon />
+                    </AwesomeButton>
+                  </IconButton>
                 </Tooltip>
               </FlexBox>
             </>
